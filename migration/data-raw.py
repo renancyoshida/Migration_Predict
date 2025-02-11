@@ -1,9 +1,7 @@
 import pandas as pd
-import statsmodels.api as sm
 import numpy as np
-import matplotlib.pyplot as plt
 
-from paths import PATH_OUT, PATH_FIG, PATH_IN
+PATH_OUT=r'C:\Users\renan\Documents\Media_Conflict\Media\data'
 PATH='D:'
 
 # === PREP DATA ===
@@ -15,7 +13,6 @@ origins=sig[['muni_id']]  # to get coord, muni id
 pairs=occs.groupby(['muni_id_land', 'muni_id_origin'])['muni_id_land'].count()
 pairs=pairs.reset_index(name='movers')
 pairs['muni_id_origin']=pairs['muni_id_origin'].astype(int)
-pairs.value_counts('movers')
 
 # get only lands without origin, production set
 occs['has_origin']=np.where(occs['muni_id_origin'].isna(), 0, 1)
@@ -38,11 +35,13 @@ est_df=df[['movers', 'muni_id_o', 'muni_id_d']]
 # adding features 
 covs=pd.read_csv(f'{PATH_OUT}\\tv-cross-section.csv')
 cov_list=['muni_id','inc_pc','population91', 'PT_votes_98','share_landless', 'illiter', 'urbanization','agro_share', 'pasture_share', 'elevation']
-covs=covs[cov_list]
+covs_d=covs[cov_list]
+covs_d.columns=[f'{col}_d' for col in cov_list]
+covs_o=covs[cov_list]
+covs_o.columns=[f'{col}_o' for col in cov_list]
 
-est_df=est_df.merge(covs[cov_list], left_on='muni_id_d', right_on='muni_id', how='left')    
-est_df=est_df.merge(covs[cov_list], left_on='muni_id_o', right_on='muni_id', how='left')
-est_df=est_df.drop(columns=['muni_id_x', 'muni_id_y'])
+est_df=est_df.merge(covs_d, left_on='muni_id_d', right_on='muni_id_d', how='left')    
+est_df=est_df.merge(covs_o, left_on='muni_id_o', right_on='muni_id_o', how='left')
 
 # merge with distance and travel time
 dist_df=pd.read_csv(f'{PATH}\\mun_dist\\mun_dist.csv', sep=',')

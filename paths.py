@@ -1,0 +1,8 @@
+PATH_ANT=r'C:\\Users\\renan\\OneDrive - Leland Stanford Junior University\Research\Media\data\raw\\antennas'
+PATH_IN= r'C:\\Users\\renan\\OneDrive - Leland Stanford Junior University\Research\Media\data\raw'
+PATH_OUT = r'C:\Users\renan\Documents\Media_Conflict\Media\data'
+PATH_FIG=r'C:\Users\renan\Dropbox\Apps\Overleaf\Media and Land Reform\Figures' 
+PATH_MAP='C:\\Users\\renan\\OneDrive - Leland Stanford Junior University\Research\\Media\\data\\raw\\municipios_2022\\BR_Municipios_2022.shp'
+PATH_REC='C:\\Users\\renan\\OneDrive - Leland Stanford Junior University\Research\Media\data\\record_pdfs'
+PATH_GLOBO='C:\\Users\\renan\\OneDrive - Leland Stanford Junior University\Research\Media\data\\globo_pdfs'
+PATH='D:'

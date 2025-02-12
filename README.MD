@@ -23,7 +23,7 @@ I use demographic and economic variables from both origin and destination such a
 
 * Evaluation: Given large class imbalance, I use AUC_PR. 
 
-* Models: I compare a baseline logistic regression with an out-of-the-box XGBoost and a fine-tuned XGBoost. For each model, a Cross-Validation with Grid Search to optimize hyperparameters was conducted.
+* Models: I compare a baseline decision tree with an out-of-the-box XGBoost and a fine-tuned XGBoost. For each model, a Cross-Validation with Grid Search to optimize hyperparameters was conducted.
 
 ## Results
 

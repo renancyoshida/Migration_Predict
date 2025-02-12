@@ -6,11 +6,11 @@ This is a ML task that is part of a chapter in my PhD dissertation. In Brazil, l
 
 Below are two maps. The first displays in blue occupations where I have people's origins and in red the ones I do not, hence the issue. The red polygons are then the production dataset, and the blue the labeled data.
 
-![Occupations with and without origins](https://github.com/renancyoshida/Migration_Predict/blob/working/figures/occ-match-map.png?raw=true)
-
+https://github.com/renancyoshida/Migration_Predict/blob/master/migration/figures/occ-match-map.png
 
 The second map displays an example. A red dot where occupation took place and the shaded polygons are origins.
 
+https://github.com/renancyoshida/Migration_Predict/blob/master/migration/figures/occ-map-maisa.png
 
 ## Data
 
@@ -29,3 +29,8 @@ I use demographic and economic variables from both origin and destination such a
 
 * XGBoost and tuning exhibit a substantial improvement:
 
+https://github.com/renancyoshida/Migration_Predict/blob/master/migration/figures/pr_curve.png
+
+* I also evaluate feature importance: same_muni and population in origin city are the most important predictors:
+
+https://github.com/renancyoshida/Migration_Predict/blob/master/migration/figures/feature_importance.png
